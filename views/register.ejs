@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+    <div class="container">
+        <header class="nav">
+            <nav>
+                <div class="nav-links">
+                    <a href="/">Home</a>
+                    <a href="/">Add Student</a>
+                    <a href="/">Add Course</a>
+                    <a href="/">Student List</a>
+                </div>
+            </nav>
+        </header>
+        <div class="form-container">
+            <h1>Registration Form</h1>
+            <form method="post" action="/api/register">
+                <% if(error) { %>
+                <p class="error"><%= error %></p>
+                <% } %>
+                <div class="form-group">
+                    <label for="username">Username</label>
+                    <input type="text" id="username" name="username" placeholder="Username" />
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" placeholder="example@whatever.com" />
+                </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" placeholder="Password" />
+                </div>
+                <div class="form-group">
+                    <label for="confirm-password">Confirm Password</label>
+                    <input type="password" id="confirm-password" name="confirm-password" placeholder="Password" />
+                </div>
+                <button type="submit">Register</button>
+                <p class="footer">
+                    Don't have an account? <a href="/login">Register here</a>
+                </p>
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>

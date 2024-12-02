@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <nav class="nav" aria-label="Global">
+                <div class="nav-links">
+                    <a class="nav-item" href="/">Home</a>
+                    <a class="nav-item" href="/">Add Student</a>
+                    <a class="nav-item" href="/">Add Course</a>
+                    <a class="nav-item" href="/">Student List</a>
+                </div>
+            </nav>
+        </header>
+        <% if (name) { %>
+            <div class="content">
+                <h1 class="title">Welcome, <%= name %></h1>
+                <p class="subtitle">You are now logged in.</p>
+                <div class="button-container">
+                    <a href="/api/logout" class="button">Logout</a>
+                </div>
+            </div>
+        <% } else { %>
+            <div class="content">
+                <h1 class="title error">Invalid User</h1>
+                <p class="subtitle">You dont have access to page. Please Login.</p>
+                <div class="button-container">
+                    <a href="/login" class="button">Login</a>
+                </div>
+            </div>
+        <% } %>
+    </div>
+</body>
+</html>
